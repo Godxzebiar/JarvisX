@@ -8,7 +8,7 @@ async function send() {
     document.getElementById("reply").textContent = "Thinking...";
 
     try {
-        const res = await fetch("/chat", {
+        const res = await fetch("https://jarvisx-0lag.onrender.com/chat", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
