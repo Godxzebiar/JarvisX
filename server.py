@@ -10,6 +10,11 @@ CORS(app)
 def home():
     return send_from_directory("www", "index.html")
 
+     @app.route("/<path:path>")
+def static_files(path):
+    return send_from_directory("www", path)
+
+
 @app.route("/chat", methods=["POST"])
 def chat():
     try:
