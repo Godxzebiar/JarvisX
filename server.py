@@ -2,6 +2,7 @@ from flask import Flask, request, jsonify, send_from_directory
 from flask_cors import CORS
 from modules.ai import ask_ai
 from config.settings import GREETING, VERSION
+import os
 
 app = Flask(__name__)
 CORS(app)
@@ -10,10 +11,9 @@ CORS(app)
 def home():
     return send_from_directory("www", "index.html")
 
-     @app.route("/<path:path>")
+@app.route("/<path:path>")
 def static_files(path):
     return send_from_directory("www", path)
-
 
 @app.route("/chat", methods=["POST"])
 def chat():
@@ -34,9 +34,6 @@ def chat():
             "reply": f"Server Error: {e}"
         }), 500
 
-
-import os
-
 if __name__ == "__main__":
     print(GREETING)
     app.run(
@@ -44,3 +41,4 @@ if __name__ == "__main__":
         port=int(os.environ.get("PORT", 5000)),
         debug=False
     )
+
