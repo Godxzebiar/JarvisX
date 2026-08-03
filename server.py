@@ -30,9 +30,7 @@ def chat():
         }), 500
 
 
-if __name__ == "__main__":
-    print(GREETING)
-    import os
+import os
 
 if __name__ == "__main__":
     print(GREETING)
@@ -41,5 +39,3 @@ if __name__ == "__main__":
         port=int(os.environ.get("PORT", 5000)),
         debug=False
     )
-
-
