@@ -1,22 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jarvis X</title>
-    <link rel="stylesheet" href="style.css">
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Jarvis X V2</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
 </head>
+
 <body>
 
-<h1>🤖 Jarvis X</h1>
+<div class="app">
 
-<input type="text" id="message" placeholder="Type your message...">
-<button onclick="send()">Send</button>
+<header>
 
-<pre id="reply"></pre>
+<div class="logo">
+
+🤖
+
+</div>
+
+<div>
+
+<h2>Jarvis X</h2>
+
+<p>Powered by OpenRouter</p>
+
+</div>
+
+</header>
+
+<div id="chat" class="chat">
+
+<div class="ai">
+
+👋 Hello Boss! Jarvis X V2 is Ready.
+
+</div>
+</div>
+
+<div id="typing" class="typing" style="display:none;">
+
+<div class="typingBubble">
+
+<span></span>
+
+<span></span>
+
+<span></span>
+
+</div>
+
+</div>
+
+<footer>
+
+<input
+type="text"
+id="message"
+placeholder="Ask Jarvis anything..."
+autocomplete="off"
+onkeydown="if(event.key==='Enter')send()">
+
+<button onclick="send()">
+
+➤
+
+</button>
+
+</footer>
+
+</div>
 
 <script src="script.js"></script>
 
 </body>
-</html>
 
+</html>
