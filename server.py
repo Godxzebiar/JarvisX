@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, send_from_directory
 from flask_cors import CORS
 from modules.ai import ask_ai
 from config.settings import GREETING, VERSION
@@ -8,11 +8,7 @@ CORS(app)
 
 @app.route("/")
 def home():
-    return {
-        "status": "online",
-        "name": "Jarvis X",
-        "version": VERSION
-    }
+    return send_from_directory("www", "index.html")
 
 @app.route("/chat", methods=["POST"])
 def chat():
